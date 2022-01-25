@@ -12,7 +12,7 @@ Variables: así se crea una variable en un template
 {{- $mynumber := 14 }}
 El valor de la variable es: {{ $mynumber }}
 `
-	t, err := template.New("tpl04").Parse(tpl05)
+	t, err := template.New("tpl05").Parse(tpl05)
 	if err != nil {
 		log.Fatalf("Error parsing template	%v", err)
 	}
