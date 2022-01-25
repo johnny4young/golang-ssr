@@ -13,7 +13,7 @@ type person struct {
 
 func main() {
 
-	t, err := template.New("invitation.tpl").ParseFiles("templates/invitation.tpl")
+	t, err := template.New("").ParseGlob("templates/*.tpl")
 	if err != nil {
 		log.Fatalf("Error parsing template	%v", err)
 	}
@@ -22,7 +22,7 @@ func main() {
 		Name: "Gopher",
 		Age:  19,
 	}
-	err = t.Execute(os.Stdout, p)
+	err = t.ExecuteTemplate(os.Stdout, "invitation.tpl", p)
 	if err != nil {
 		log.Fatalf("Error executing template	%v", err)
 	}
